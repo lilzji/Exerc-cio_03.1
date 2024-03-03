@@ -26,7 +26,10 @@ public class DistroController {
 				BufferedReader bufferLinux = new BufferedReader(leitorLinux);
 				String linhaLinux = bufferLinux.readLine();
 				while (linhaLinux != null) {
-					System.out.println(linhaLinux);
+					if(linhaLinux.contains("PRETTY")) {
+						String versaoNome[] = linhaLinux.split("=");
+						System.out.println("O nome e a versao de distribuicao sao: " + versaoNome[1]);
+					}
 					linhaLinux = bufferLinux.readLine();
 				}
 				bufferLinux.close();
